@@ -13,15 +13,15 @@ os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 # by opening the file then converting the text in each file  into numbers
 
 filepath1 = tf.keras.utils.get_file('shakespeare.txt', 'https://storage.googleapis.com/download.tensorflow.org/data/shakespeare.txt')
-shakespeare_text = open(filepath1, 'rb').read().decode(encoding='utf-8')
+# shakespeare_text = open(filepath1, 'rb').read().decode(encoding='utf-8')
 shakespeare_text = open(filepath1, 'rb').read().decode(encoding='utf-8').lower()
 
 filepath2 = "C:/Users/babat/Downloads/Datasets/dataset1.txt"
-dataset1_text = open(filepath2, 'rb').read().decode(encoding='utf-8')
+# dataset1_text = open(filepath2, 'rb').read().decode(encoding='utf-8')
 dataset1_text = open(filepath2, 'rb').read().decode(encoding='utf-8').lower()
 
 filepath3 = "C:/Users/babat/Downloads/Datasets/dataset2.txt"
-dataset2_text = open(filepath3, 'rb').read().decode(encoding='utf-8')
+# dataset2_text = open(filepath3, 'rb').read().decode(encoding='utf-8')
 dataset2_text = open(filepath3, 'rb').read().decode(encoding='utf-8').lower()
 
 # Merging all the datasets into one single file used for the training
@@ -81,7 +81,9 @@ model.compile(loss='categorical_crossentropy',
 model.fit(x, y, batch_size=512, epochs=24)
 
 # Save the trained model for ulterior use
-model.save("Poem_Generator.model")
+model.save('Poem_Generator.keras')
+
+
 # Portion to generate poems
 
 # def sample(preds, temperature=1.0):
